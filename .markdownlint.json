@@ -16,7 +16,9 @@
     },
     "MD033": {
         "allowed_elements": [
-            "a"
+            "a",
+            "br",
+            "pre"
         ]
     },
     "MD040": false,
