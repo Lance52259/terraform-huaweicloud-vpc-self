@@ -12,8 +12,14 @@ module "vpc_service" {
   vpc_cidr_block = "172.16.0.0/16"
 
   subnet_configuration = [
-    {name="module-single-master-subnet", cidr="172.16.66.0/24"},
-    {name="module-single-standby-subnet", cidr="172.16.86.0/24"},
+    {
+      name="module-single-master-subnet",
+      cidr="172.16.66.0/24",
+    },
+    {
+      name="module-single-standby-subnet",
+      cidr="172.16.86.0/24",
+    },
   ]
 
   is_security_group_create = false
@@ -53,11 +59,11 @@ Full contributing [guidelines are covered here](.github/how_to_contribute.md).
 | is_vpc_create | Controls whether a VPC should be created (it affects all VPC related resources under this module) | bool | true | N |
 | vpc_name | The name of the VPC resource | string | "" | N |
 | vpc_cidr_block | The CIDR block of the VPC resource | string | "192.168.0.0/16" | N |
-| subnets_configuration | The configuration for the subnet resources to which the VPC belongs | list(object) | <pre>[<br>  {<br>    name = "module-default-subnet"<br>    cidr = "192.168.16.0/20"<br>  }<br>]</pre> | N |
+| subnets_configuration | The configuration for the subnet resources to which the VPC belongs | list(object) | <pre>[<br>  {<br>    name = "module-default-subnet",<br>    cidr = "192.168.16.0/20",<br>  },<br>]</pre> | N |
 | is_security_group_create | Controls whether a security group should be created (it affects all security group related resources under this module) | bool | true | N |
 | security_group_name | The name of the security group resource" | string | "" | N |
 | security_group_description | The description of the security group resource | string | null | N |
-| security_group_rules_configuration | The configuration for security group rule resources to which the security group belongs | list(object) | <pre>[<br>  {<br>    protocol = "icmp"<br>  }<br>]</pre> | N |
+| security_group_rules_configuration | The configuration for security group rule resources to which the security group belongs | list(object) | <pre>[<br>  {<br>    protocol = "icmp",<br>  },<br>]</pre> | N |
 
 ## Outputs
 
